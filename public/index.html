@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the closest Tailwind Colors</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="website icon" href="./assets/findtheclosesttailwindcolors-website_icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main-container" id="main">
+            <div class="content">
+                <div class="text">
+                    <h1>Find the closest Tailwind CSS Colors</h1>
+                    <h2>Enter a color and find the closest Tailwind color names.</h2>
+                </div>
+                <div class="form">
+                    <div id="form-div">
+                        <div class="input-color-container">
+                            <div class="input-color" id="rgb">
+                                <input class="inputs" id="red" type="text" maxlength="3" placeholder="255" value="255" onkeypress="return regexRGB(event)">
+                                <div class="virgula"><span>,</span></div>
+                                <input class="inputs" id="green" type="text" maxlength="3" placeholder="255" value="255" onkeypress="return regexRGB(event)">
+                                <div class="virgula"><span>,</span></div>
+                                <input class="inputs" id="blue" type="text" maxlength="3" placeholder="255" value="255" onkeypress="return regexRGB(event)">
+                            </div>
+                            <label class="color-label">RGB</label>
+                            <button class="btn-copy" onclick="copyRGBCode()">
+                                <svg class="svgs icon-btn-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.98,13.96h-4.74c-.13,0-.24-.11-.24-.24V7.07c0-.13,.11-.24,.24-.24h4.74c.13,0,.24,.11,.24,.24v6.64c0,.13-.11,.24-.24,.24Zm-6.77-7.72V14.55c0,.66,.53,1.19,1.19,1.19h6.41c.66,0,1.19-.53,1.19-1.19V6.24c0-.66-.53-1.19-1.19-1.19h-6.41c-.66,0-1.19,.53-1.19,1.19Z"></path><path d="M15.68,18.95H7.19c-.66,0-1.19-.53-1.19-1.19V7.37c0-.49,.4-.89,.89-.89s.89,.4,.89,.89v9.57c0,.13,.1,.23,.23,.23h7.67c.49,0,.89,.4,.89,.89s-.4,.89-.89,.89Z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="input-color-container">
+                            <div class="input-color" id="hex-container">
+                                <div class="hashtag"><span>#</span></div>
+                                <input class="inputs" id="hex" type="text" placeholder="FFFFFF" value="FFFFFF" maxlength="6" onkeypress="return regexHex(event)">
+                            </div>
+                            <label class="color-label">HEX</label>
+                            <button class="btn-copy" onclick="copyHexCode()">
+                                <svg class="svgs icon-btn-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.98,13.96h-4.74c-.13,0-.24-.11-.24-.24V7.07c0-.13,.11-.24,.24-.24h4.74c.13,0,.24,.11,.24,.24v6.64c0,.13-.11,.24-.24,.24Zm-6.77-7.72V14.55c0,.66,.53,1.19,1.19,1.19h6.41c.66,0,1.19-.53,1.19-1.19V6.24c0-.66-.53-1.19-1.19-1.19h-6.41c-.66,0-1.19,.53-1.19,1.19Z"></path><path d="M15.68,18.95H7.19c-.66,0-1.19-.53-1.19-1.19V7.37c0-.49,.4-.89,.89-.89s.89,.4,.89,.89v9.57c0,.13,.1,.23,.23,.23h7.67c.49,0,.89,.4,.89,.89s-.4,.89-.89,.89Z"></path></svg>		
+                            </button>
+                        </div>
+                    </div>
+                    <input class="inputs" id="color-picker" type="color">
+                </div>
+                <div id="root">
+                </div>
+            </div>
+        </div>
+        <div class="main-container" id="tailwind-colors">
+            <template>
+                <div class="container" id="container-">
+                    <div class="color-wrapper">
+                        <div class="name-container">
+                            <div class="copy-name-container">
+                                <button class="btn-copy info" onclick="copyTailwindColorName()"><svg class="svgs icon-btn-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.98,13.96h-4.74c-.13,0-.24-.11-.24-.24V7.07c0-.13,.11-.24,.24-.24h4.74c.13,0,.24,.11,.24,.24v6.64c0,.13-.11,.24-.24,.24Zm-6.77-7.72V14.55c0,.66,.53,1.19,1.19,1.19h6.41c.66,0,1.19-.53,1.19-1.19V6.24c0-.66-.53-1.19-1.19-1.19h-6.41c-.66,0-1.19,.53-1.19,1.19Z"></path><path d="M15.68,18.95H7.19c-.66,0-1.19-.53-1.19-1.19V7.37c0-.49,.4-.89,.89-.89s.89,.4,.89,.89v9.57c0,.13,.1,.23,.23,.23h7.67c.49,0,.89,.4,.89,.89s-.4,.89-.89,.89Z"></path></svg></button>
+                                <h3 class="name" onclick="expandColorInfo()">Tailwind Color</h3>
+                            </div>
+                            <button class="btn-expand" onclick="expandColorInfo()"><img src="./assets/btn-expand.svg" alt="Botão de expandir"></button>
+                        </div>
+                        <div class="info-container">
+                            <div class="rgb-container">
+                                <button class="btn-copy info" onclick="copyTailwindRGBCode()"><svg class="svgs icon-btn-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.98,13.96h-4.74c-.13,0-.24-.11-.24-.24V7.07c0-.13,.11-.24,.24-.24h4.74c.13,0,.24,.11,.24,.24v6.64c0,.13-.11,.24-.24,.24Zm-6.77-7.72V14.55c0,.66,.53,1.19,1.19,1.19h6.41c.66,0,1.19-.53,1.19-1.19V6.24c0-.66-.53-1.19-1.19-1.19h-6.41c-.66,0-1.19,.53-1.19,1.19Z"></path><path d="M15.68,18.95H7.19c-.66,0-1.19-.53-1.19-1.19V7.37c0-.49,.4-.89,.89-.89s.89,.4,.89,.89v9.57c0,.13,.1,.23,.23,.23h7.67c.49,0,.89,.4,.89,.89s-.4,.89-.89,.89Z"></path></svg></button>
+                                <h4 class="rgb" onclick="copyTailwindRGBCode()">RGB: <span></span></h4>
+                            </div>
+                            <div class="hex-container">
+                                <button class="btn-copy info" onclick="copyTailwindHexCode()"><svg class="svgs icon-btn-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.98,13.96h-4.74c-.13,0-.24-.11-.24-.24V7.07c0-.13,.11-.24,.24-.24h4.74c.13,0,.24,.11,.24,.24v6.64c0,.13-.11,.24-.24,.24Zm-6.77-7.72V14.55c0,.66,.53,1.19,1.19,1.19h6.41c.66,0,1.19-.53,1.19-1.19V6.24c0-.66-.53-1.19-1.19-1.19h-6.41c-.66,0-1.19,.53-1.19,1.19Z"></path><path d="M15.68,18.95H7.19c-.66,0-1.19-.53-1.19-1.19V7.37c0-.49,.4-.89,.89-.89s.89,.4,.89,.89v9.57c0,.13,.1,.23,.23,.23h7.67c.49,0,.89,.4,.89,.89s-.4,.89-.89,.89Z"></path></svg></button>
+                                <h4 class="hex" onclick="copyTailwindHexCode()">HEX: <span></span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
