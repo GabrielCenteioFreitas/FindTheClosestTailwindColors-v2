@@ -78,8 +78,5 @@ const chat = model.startChat({
 export const sendMessage = async (msg, qntd) => {
   const result = await chat.sendMessage(`${msg} ${qntd} cores`)
   const response = result.response
-  // console.log(response.text())
   return response.text()
 }
-
-// sendMessage("#000000", 3)
