@@ -14,7 +14,7 @@ function App() {
     try {
       sendMessage(
         `#${color}`,
-        document.querySelector("#tailwind-colors").childNodes.length - 2
+        document.querySelector("#tailwind-colors").children.length - 1
       ).then(cores_proximas => {
         setIsButtonLoading(false)
 
