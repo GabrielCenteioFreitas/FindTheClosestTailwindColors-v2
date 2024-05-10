@@ -30,14 +30,14 @@
 </div>
 
 <br>
-<p align="center">
+<div align="center">
   <img alt="Preview do projeto." src=".github/preview.gif" width="85%">
-</p>
+</div>
 
-<h4 align="center">
+<h3 align="center">
   
   [Ver projeto](https://find-the-closest-tailwind-colors-v2.vercel.app/)
-</h4>
+</h3>
 
 <br>
 
@@ -56,11 +56,32 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Sobre o projeto<a id="projeto"></a>
 
-"Find the closest Tailwind CSS colors" é uma ferramenta que todo desenvolvedor Tailwind precisa. Desenvolvida com o propósito de eliminar dúvidas ao escolher qual cor do Tailwind é mais similar àquela usada em um projeto.
+Tailwind CSS é um framework CSS que visa a utilidade, para tal, fornece diversas classes utilitárias. Acerca de cores, o Tailwind apresenta uma grande lista de opções, o que facilita a construção de um projeto. Entretanto, ao desenvolver uma aplicação, é comum que o desenvolvedor possua uma cor que deseja utilizar no projeto e que não está na paleta do Tailwind, logo, precisa encontrar uma cor que seja semelhante a desejada. (ainda que seja possível adicionar cores personalizadas, a utilização da própria paleta acaba sendo mais fácil e rápida).
 
-Fácil e intuitivo, nesse site você pode inserir uma cor em código Hex/RGB ou selecioná-la de um seletor de cores e obter instantaneamente as cores mais próximas da paleta Tailwind.
+Foi com esse propósito que o "Find the closest Tailwind CSS Colors" surgiu. Ele é uma ferramenta que todo desenvolvedor Tailwind precisa. Fácil e intuitivo, nesse site você pode inserir uma cor em código Hex/RGB ou selecioná-la de um seletor de cores e obter instantaneamente as cores mais próximas da paleta Tailwind.
 
 Você pode acessar/usar a ferramenta clicando [aqui](https://find-the-closest-tailwind-colors-v2.vercel.app/).
+
+### Sobre a versão 2 e a inserção da Google Gemini AI no projeto
+Por mais que a maior parte dos problemas citados tenha sido solucionada no lançamento da v1, ainda havia uma questão que me tirava o sono. Cores pouco saturadas.
+
+Como o "Find the closest Tailwind CSS Colors" se utiliza de cálculos matemáticos para encontrar as cores mais próximas, cores pouco saturadas faziam com que fossem mostradas como cores próximas, principalmente, diversos tons de cinza(como mostrado na imagem a seguir). Porém, como solucionar isso?
+
+<div align="center">
+  <img alt="Cores mais próximas encontradas pelos cálculos." src=".github/cores-calculos.png" width="50%">
+</div>
+
+Foi, então, assistindo as aulas da Imersão de Inteligência Artificial com o Google Gemini da Alura que me veio a solução. O Gemini, IA do Google, seria capaz de identificar a qual cor determinada tonalidade pertence, e, consequentemente, encontrar cores próximas melhor do que os cálculos matemáticos. (a imagem abaixo mostra as cores mais próximas encontradas pelo Gemini a partir da mesma cor do exemplo anterior)
+
+<div align="center">
+  <img alt="Cores mais próximas encontradas pelo Gemini." src=".github/cores-gemini.png" width="50%">
+</div>
+
+A partir disso, um botão foi adicionado abaixo dos inputs de cor para ver as sugestõs de cores dadas pelo Gemini. Dessa forma, a versão 2 do "Find the closest Tailwind CSS Colors" surgiu, criando um pequeno botão, mas resultado de um grande avanço da tecnologia.
+
+<div align="center">
+  <img alt="Botão de consulta ao Gemini." src=".github/gemini-ai-button.png" width="30%">
+</div>
 
 ### 🔧 Executando localmente
 
