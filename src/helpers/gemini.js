@@ -72,6 +72,30 @@ const chat = model.startChat({
       role: "model",
       parts: [{ text: "green-600 emerald-600 green-500"}],
     },
+    {
+      role: "user",
+      parts: [{ text: "#276828 5 cores"}],
+    },
+    {
+      role: "model",
+      parts: [{ text: "green-800 green-900 green-700 emerald-800 lime-800"}],
+    },
+    {
+      role: "user",
+      parts: [{ text: "#A27AFF 3 cores"}],
+    },
+    {
+      role: "model",
+      parts: [{ text: "violet-400 purple-400 violet-500"}],
+    },
+    {
+      role: "user",
+      parts: [{ text: "#E53E26 3 cores"}],
+    },
+    {
+      role: "model",
+      parts: [{ text: "red-600 red-700 rose-600"}],
+    },
   ],
 });
 
