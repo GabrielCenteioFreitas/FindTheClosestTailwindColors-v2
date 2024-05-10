@@ -57,7 +57,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Sobre o projeto<a id="projeto"></a>
 
-Tailwind CSS é um framework CSS que visa a utilidade, para tal, fornece diversas classes utilitárias. Acerca de cores, o Tailwind apresenta uma grande lista de opções, o que facilita a construção de um projeto. Entretanto, ao desenvolver uma aplicação, é comum que o desenvolvedor possua uma cor que deseja utilizar no projeto e que não está na paleta do Tailwind, logo, precisa encontrar uma cor que seja semelhante a desejada. (ainda que seja possível adicionar cores personalizadas, a utilização da própria paleta acaba sendo mais fácil e rápida).
+Tailwind CSS é um framework CSS que visa a utilidade, para isso, ele fornece diversas classes utilitárias. Acerca de cores, o Tailwind apresenta uma grande lista de opções, o que facilita a construção de um projeto. Entretanto, ao desenvolver uma aplicação, é comum que o desenvolvedor possua uma cor que deseja utilizar no projeto e que não está na paleta do Tailwind, logo, precisa encontrar uma cor que seja semelhante a desejada. (ainda que seja possível adicionar cores personalizadas, a utilização da própria paleta acaba sendo mais fácil e rápida).
 
 **Foi com esse propósito que o "Find the closest Tailwind CSS Colors" surgiu, tornando-se uma ferramenta que todo desenvolvedor Tailwind precisa**. Fácil e intuitivo, nesse site você pode inserir uma cor em código Hex/RGB ou selecioná-la de um seletor de cores e obter instantaneamente as cores mais próximas da paleta Tailwind. E caso o resultado não agrade, é possível ver sugestões de cores próximas dadas pelo Gemini, IA do Google.
 
@@ -101,7 +101,7 @@ Acesse [http://localhost:3000](http://localhost:3000) para visualizar a aplicaç
 
 ## 🤝 Contribuições
 
-Issues e pull requests são apreciados!
+Issues e pull requests são muito bem-vindos!
 
 ## 👨🏻‍💻 Autor: Gabriel Centeio Freitas 
 
