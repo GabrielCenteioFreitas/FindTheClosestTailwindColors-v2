@@ -298,6 +298,10 @@ body * {
 }
 .ai-button:disabled {
   opacity: 50%;
+  cursor: not-allowed;
+}
+.ai-button.loading:disabled {
+  cursor: wait;
 }
 .ai-button span {
   font-weight: 600;

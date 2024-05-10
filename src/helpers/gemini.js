@@ -76,7 +76,14 @@ const chat = model.startChat({
 });
 
 export const sendMessage = async (msg, qntd) => {
-  const result = await chat.sendMessage(`${msg} ${qntd} cores`)
-  const response = result.response
-  return response.text()
+  try {
+    const result = await chat.sendMessage(`${msg} ${qntd} cores`)
+    const response = result.response
+    return response.text()
+  } catch(error) {
+    if (error.status === 429) {
+      return "error-429"
+    }
+    return "error"
+  }
 }
