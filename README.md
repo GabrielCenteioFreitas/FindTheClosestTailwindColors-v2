@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+<h1 align="center">Find the Closest Tailwind Colors</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a alt="ReactJS">
+    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
+  </a>
+  <a alt="Create React App">
+    <img src="https://img.shields.io/badge/Create%20React%20App-09D3AC.svg?style=for-the-badge&logo=Create-React-App&logoColor=white" />
+  </a>
+  <a alt="Javascript">
+    <img src="https://img.shields.io/badge/JAVASCRIPT-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge" />
+  </a>
+  <a alt="HTML5">
+    <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge" />
+  </a>
+  <a alt="CSS3">
+    <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=for-the-badge" />
+  </a>
+  <a alt="Gemini AI">
+    <img src="https://img.shields.io/badge/Google%20Gemini-8E75B2.svg?style=for-the-badge&logo=Google-Gemini&logoColor=white" />
+  </a>
+  <a alt="Tailwind">
+    <img src="https://img.shields.io/badge/TAILWINDCSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  </a>
+</p>
 
-## Available Scripts
+<p align="center">
+  <a href="#tecnologias">Tecnologias</a> •
+  <a href="#projeto">Projeto</a>
+</div>
 
-In the project directory, you can run:
+<br>
+<p align="center">
+  <img alt="Preview do projeto." src=".github/preview.gif" width="85%">
+</p>
 
-### `npm start`
+<h4 align="center">
+  
+  [Ver projeto](https://find-the-closest-tailwind-colors-v2.vercel.app/)
+</h4>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 🚀 Tecnologias<a id="tecnologias"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-### `npm run build`
+- ReactJS
+- Create React App
+- Javascript
+- HTML
+- CSS
+- Google Gemini AI
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 💻 Sobre o projeto<a id="projeto"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+"Find the closest Tailwind CSS colors" é uma ferramenta que todo desenvolvedor Tailwind precisa. Desenvolvida com o propósito de eliminar dúvidas ao escolher qual cor do Tailwind é mais similar àquela usada em um projeto.
 
-### `npm run eject`
+Fácil e intuitivo, nesse site você pode inserir uma cor em código Hex/RGB ou selecioná-la de um seletor de cores e obter instantaneamente as cores mais próximas da paleta Tailwind.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Você pode acessar/usar a ferramenta clicando [aqui](https://find-the-closest-tailwind-colors-v2.vercel.app/).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🔧 Executando localmente
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Após clonar o repositório, acesse a pasta do projeto e inicie o servidor de desenvolvimento:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+Acesse [http://localhost:3000](http://localhost:3000) para visualizar a aplicação.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🤝 Contribuições
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Issues e pull requests são apreciados!
 
-### Code Splitting
+## 👨🏻‍💻 Autor: Gabriel Centeio Freitas 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="left">
+  <a alt="Github" href="https://github.com/GabrielCenteioFreitas/">
+    <img src="https://img.shields.io/badge/GITHUB-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a alt="Linkedin" href="https://www.linkedin.com/in/gabrielcenteiofreitas/">
+    <img src="https://img.shields.io/badge/LINKEDIN-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+</p>
