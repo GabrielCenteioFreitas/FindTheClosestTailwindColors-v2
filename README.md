@@ -62,14 +62,14 @@ Como o "Find the closest Tailwind CSS Colors" se utiliza de cálculos matemátic
   [<img alt="Cores mais próximas encontradas pelos cálculos." src=".github/cores-calculos.png" width="50%">](https://find-the-closest-tailwind-colors-v2.vercel.app/)
 </div>
 
-Foi, então, assistindo as aulas da [Imersão de Inteligência Artificial com o Google Gemini da Alura](https://cursos.alura.com.br/imersao) que me veio a solução. O Gemini, IA do Google, seria capaz de identificar a qual cor determinada tonalidade pertence, e, consequentemente, encontrar cores próximas melhor do que os cálculos matemáticos. (a imagem abaixo mostra as cores mais próximas encontradas pelo Gemini a partir da mesma cor do exemplo anterior)
+Foi, então, assistindo às aulas da [Imersão de Inteligência Artificial com o Google Gemini da Alura](https://cursos.alura.com.br/imersao) que me veio a solução. O Gemini, IA do Google, seria capaz de identificar a qual cor determinada tonalidade pertence, e, consequentemente, encontrar cores próximas melhor do que os cálculos matemáticos. (a imagem abaixo mostra as cores mais próximas encontradas pelo Gemini a partir da mesma cor do exemplo anterior)
 
 <div align="center">
   
   [<img alt="Cores mais próximas encontradas pelo Gemini." src=".github/cores-gemini.png" width="50%">](https://find-the-closest-tailwind-colors-v2.vercel.app/)
 </div>
 
-**A partir disso, um botão foi adicionado abaixo dos inputs de cor para visualizar as sugestõs de cores dadas pelo Gemini. Dessa forma, a versão 2 do "Find the closest Tailwind CSS Colors" surgiu, criando um pequeno botão, mas resultado de um grande avanço tecnológico.**
+**A partir disso, um botão foi adicionado abaixo dos inputs de cor para visualizar as sugestões de cores dadas pelo Gemini. Dessa forma, a versão 2 do "Find the closest Tailwind CSS Colors" surgiu, criando um pequeno botão, mas resultado de um grande avanço tecnológico.**
 
 <div align="center">
   
