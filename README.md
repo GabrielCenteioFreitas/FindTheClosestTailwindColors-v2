@@ -25,8 +25,9 @@
 </p>
 
 <p align="center">
+  <a href="#projeto">Sobre o projeto</a> •
   <a href="#tecnologias">Tecnologias</a> •
-  <a href="#projeto">Projeto</a>
+  <a href="#executando">Executando localmente</a>
 </div>
 
 <br>
@@ -41,18 +42,6 @@
 </h3>
 
 <br>
-
-
-## 🚀 Tecnologias<a id="tecnologias"></a>
-
-Esse projeto foi desenvolvido com as seguintes tecnologias:
-
-- ReactJS
-- Create React App
-- Javascript
-- HTML
-- CSS
-- Google Gemini AI
 
 
 ## 💻 Sobre o projeto<a id="projeto"></a>
@@ -89,15 +78,27 @@ Foi, então, assistindo as aulas da [Imersão de Inteligência Artificial com o 
 
 Você pode acessar/usar a ferramenta clicando [aqui](https://find-the-closest-tailwind-colors-v2.vercel.app/).
 
-### 🔧 Executando localmente
+## 🔧 Executando localmente<a id="executando"></a>
 
-Após clonar o repositório, acesse a pasta do projeto e inicie o servidor de desenvolvimento:
+Após [clonar o repositório](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository) e acessar a pasta do projeto, instale as dependências e inicie o servidor de desenvolvimento com os seguintes comandos:
 
 ```bash
+npm install
 npm start
 ```
 
 Acesse [http://localhost:3000](http://localhost:3000) para visualizar a aplicação.
+
+## 🚀 Tecnologias<a id="tecnologias"></a>
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- ReactJS
+- Create React App
+- Javascript
+- HTML
+- CSS
+- Google Gemini AI
 
 ## 🤝 Contribuições
 
