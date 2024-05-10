@@ -99,7 +99,8 @@ function acharCores() {
 }
 
 function createTailwindColorsDivs(cores_proximas, cores_tailwind) {
-  while (document.querySelector("#tailwind-colors").childNodes.length > 2) {
+  while (document.querySelector("#tailwind-colors").children.length > 1) {
+    console.log(document.querySelector("#tailwind-colors").children)
     document.querySelector("#tailwind-colors").removeChild(document.querySelector("#tailwind-colors").lastChild);
   }
 
