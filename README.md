@@ -48,12 +48,12 @@
 
 Tailwind CSS é um framework CSS que visa a utilidade, para isso, ele fornece diversas classes utilitárias. Acerca de cores, o Tailwind apresenta uma grande lista de opções, o que facilita a construção de um projeto. Entretanto, ao desenvolver uma aplicação, é comum que o desenvolvedor possua uma cor que deseja utilizar no projeto e que não está na paleta do Tailwind, logo, precisa encontrar uma cor que seja semelhante a desejada. (ainda que seja possível adicionar cores personalizadas, a utilização da própria paleta acaba sendo mais fácil e rápida).
 
-**Foi com esse propósito que o "Find the closest Tailwind CSS Colors" surgiu, tornando-se uma ferramenta que todo desenvolvedor Tailwind precisa**. Fácil e intuitivo, nesse site você pode inserir uma cor em código Hex/RGB ou selecioná-la de um seletor de cores e obter instantaneamente as cores mais próximas da paleta Tailwind. E caso o resultado não agrade, é possível ver sugestões de cores próximas dadas pelo Gemini, IA do Google.
+**Foi com esse propósito que o "Find the closest Tailwind CSS Colors" surgiu, tornando-se uma ferramenta que todo desenvolvedor Tailwind precisa**. Fácil e intuitivo, nesse site você pode inserir uma cor em código Hex/RGB ou selecioná-la de um seletor de cores e obter instantaneamente as cores mais próximas da paleta Tailwind. Além disso, é possível ver sugestões de cores próximas dadas pelo Gemini, IA do Google, que, em diversos casos, sugere cores melhores do que as encontradas pelos cálculos.
 
 Você pode acessar/usar a ferramenta clicando [aqui](https://find-the-closest-tailwind-colors-v2.vercel.app/).
 
 ### Sobre a versão 2 e a inserção da Google Gemini AI no projeto
-Por mais que o principal problema citado tenha sido solucionado no lançamento da v1, ainda havia uma questão que me tirava o sono. Cores menos saturadas.
+Por mais que o principal problema citado tenha sido solucionado no lançamento da v1, ainda havia uma questão que me tirava o sono.
 
 Como o "Find the closest Tailwind CSS Colors" se utiliza de cálculos matemáticos para encontrar as cores mais próximas, cores menos saturadas faziam com que o resultado fossem, principalmente, de diversos tons de cinza(como mostrado na imagem a seguir). Porém, como solucionar isso?
 
