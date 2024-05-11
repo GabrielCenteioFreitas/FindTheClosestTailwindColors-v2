@@ -277,11 +277,10 @@ body * {
 .ai-button {
   display: flex;
   align-items: center;
-  gap: .5rem;
-  padding: .8rem 1.2rem;
+  padding: .8rem 1.6rem;
   margin-top: 2.4rem;
 
-  background-color: transparent;
+  background-color: var(--color-white);
   border: 1px solid var(--color-black);
   border-radius: 99rem;
 
@@ -292,6 +291,30 @@ body * {
   cursor: pointer;
 
   transition: background .2s;
+}
+.gemini-info {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .8rem 2.4rem;
+
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  border-radius: 99rem;
+
+  color: var(--color-black);
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.gemini-info span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .ai-button:hover {
   background-color: #E6E6E6;
@@ -308,6 +331,9 @@ body * {
 }
 
 .loading-icon {
+  margin-right: .8rem;
+  width: 1.8rem;
+  height: 1.8rem;
   animation: loadingIconAnimation 1s linear infinite;
 }
 @keyframes loadingIconAnimation {
@@ -322,6 +348,8 @@ body * {
 .google-logo {
   width: 1.8rem;
   height: 1.8rem;
+  margin-left: .5rem;
+  margin-right: .25rem;
 }
 
 /* Tailwind colors containers */
@@ -538,10 +566,10 @@ body * {
     height: 1.4rem;
   }
   
-  .ai-button {
+  .ai-button, .gemini-info {
     font-size: 1.4rem;
   }
-  .google-logo {
+  .google-logo, .loading-icon {
     width: 1.6rem;
     height: 1.6rem;
   }
@@ -554,7 +582,7 @@ body * {
     height: 11rem;
   }
   
-  .ai-button {
+  .ai-button, .gemini-info {
     font-size: 1.3rem;
   }
 }
@@ -585,10 +613,19 @@ body * {
     margin: 3.2rem;
   }
   /* AI Button */
-  .ai-button {
+  .ai-button, .gemini-info {
     font-size: 1.2rem;
   }
-  .google-logo {
+  .gemini-info {
+    position: fixed;
+    z-index: 9;
+    bottom: 1rem;
+    right: 1rem;
+    left: auto;
+    transform: translate(0, 0);
+    max-width: 150%;
+  }
+  .google-logo, .loading-icon {
     width: 1.4rem;
     height: 1.4rem;
   }
@@ -652,7 +689,7 @@ body * {
   .ai-button {
     font-size: 1.2rem;
   }
-  .google-logo {
+  .google-logo, .loading-icon {
     width: 1.2rem;
     height: 1.2rem;
   }

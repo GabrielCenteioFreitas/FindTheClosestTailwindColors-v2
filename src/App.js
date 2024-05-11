@@ -47,6 +47,9 @@ function App() {
               return
             }
             
+            document.querySelectorAll("input").forEach(input => {
+              input.disabled = true
+            })
             window.createTailwindColorsDivs(cores_proximas, window.cores_tailwind)
             setAreColorsSuggestedByAI(true)
             break;
@@ -60,9 +63,10 @@ function App() {
 
   const handleGoBackClick = () => {
     window.acharCores()
+    document.querySelectorAll("input").forEach(input => {
+      input.disabled = false
+    })
     setAreColorsSuggestedByAI(false)
-    setShouldButtonBeDisabled(true)
-    setTimeout(() => setShouldButtonBeDisabled(false), 4000)
   }
 
   return (
@@ -72,19 +76,28 @@ function App() {
           onClick={handleGetColorsSuggestedByAIClick}
           className={`ai-button ${isButtonLoading && "loading"}`}
           disabled={isButtonLoading || shouldButtonBeDisabled}
+          id="gemini"
         >
           {(isButtonLoading || shouldButtonBeDisabled) && (
             <LoaderCircle size={18} className="loading-icon" />
           )}
-          See suggestions from <GoogleLogo size={"fill"} /> <span>GeminiAI</span>
+          See suggestions from <GoogleLogo /> <span>GeminiAI</span>
         </button>
       ) : (
-        <button
-          onClick={handleGoBackClick}
-          className="ai-button"
-        >
-          Go back
-        </button>
+        <>
+          <button
+            onClick={handleGoBackClick}
+            className="ai-button"
+            id="goback"
+          >
+            Go back to reenable color swapping
+          </button>
+          <div className="gemini-info">
+            <span>
+              You are viewing <GoogleLogo />Gemini's suggestions.
+            </span>
+          </div>
+        </>
       )}
     </>
   );
