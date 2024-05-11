@@ -98,7 +98,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Javascript
 - HTML
 - CSS
-- Google Gemini AI
+- Google Gemini API
 
 ## 🤝 Contribuições
 
