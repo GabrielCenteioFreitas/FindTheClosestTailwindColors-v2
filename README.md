@@ -43,8 +43,8 @@
 
 <br>
 
-
-## 💻 Sobre o projeto<a id="projeto"></a>
+<a id="projeto"></a>
+## 💻 Sobre o projeto
 
 Tailwind CSS é um framework CSS que visa a utilidade, para isso, ele fornece diversas classes utilitárias. Acerca de cores, o Tailwind apresenta uma grande lista de opções, o que facilita a construção de um projeto. Entretanto, ao desenvolver uma aplicação, é comum que o desenvolvedor possua uma cor que deseja utilizar no projeto e que não está na paleta do Tailwind, logo, precisa encontrar uma cor que seja semelhante a desejada. (ainda que seja possível adicionar cores personalizadas, a utilização da própria paleta acaba sendo mais fácil e rápida).
 
@@ -78,7 +78,8 @@ Foi, então, assistindo às aulas da [Imersão de Inteligência Artificial com o
 
 Você pode acessar/usar a ferramenta clicando [aqui](https://find-the-closest-tailwind-colors-v2.vercel.app/).
 
-## 🔧 Executando localmente<a id="executando"></a>
+<a id="executando"></a>
+## 🔧 Executando localmente
 
 Após [clonar o repositório](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository) e acessar a pasta do projeto, instale as dependências e inicie o servidor de desenvolvimento com os seguintes comandos:
 
@@ -89,7 +90,8 @@ npm start
 
 Acesse [http://localhost:3000](http://localhost:3000) para visualizar a aplicação.
 
-## 🚀 Tecnologias<a id="tecnologias"></a>
+<a id="tecnologias"></a>
+## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
