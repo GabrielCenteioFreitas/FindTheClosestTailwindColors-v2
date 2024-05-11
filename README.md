@@ -26,8 +26,8 @@
 
 <p align="center">
   <a href="#projeto">Sobre o projeto</a> •
-  <a href="#tecnologias">Tecnologias</a> •
-  <a href="#executando">Executando localmente</a>
+  <a href="#executando">Executando localmente</a> •
+  <a href="#tecnologias">Tecnologias</a>
 </div>
 
 <br>
