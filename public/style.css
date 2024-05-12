@@ -300,10 +300,11 @@ body * {
   gap: .5rem;
 }
 .gemini-info {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 9;
 
   justify-content: center;
   padding: .8rem 2.4rem;
@@ -616,8 +617,6 @@ body * {
     font-size: 1.2rem;
   }
   .gemini-info {
-    position: fixed;
-    z-index: 9;
     bottom: 1rem;
     right: 1rem;
     left: auto;
