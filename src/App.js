@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { sendMessage } from "./helpers/gemini";
-import { LoaderCircle } from "lucide-react";
+import { LoaderCircle, CornerDownLeft } from "lucide-react";
 import GoogleLogo from "./components/GoogleLogo";
 
 function App() {
@@ -89,6 +89,7 @@ function App() {
             className="ai-button"
             id="goback"
           >
+            <CornerDownLeft size={18} className="goback-icon" />
             Go back to reenable color swapping
           </button>
           <div className="gemini-info">

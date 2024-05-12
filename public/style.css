@@ -274,11 +274,9 @@ body * {
 }
 
 /* Gemini AI Button */
-.ai-button {
+.ai-button, .gemini-info {
   display: flex;
   align-items: center;
-  padding: .8rem 1.6rem;
-  margin-top: 2.4rem;
 
   background-color: var(--color-white);
   border: 1px solid var(--color-black);
@@ -287,10 +285,19 @@ body * {
   color: var(--color-black);
   font-weight: 500;
   font-size: 1.6rem;
+}
+.ai-button {
+  padding: .6rem 1.6rem;
+  margin-top: 2.4rem;
 
   cursor: pointer;
 
   transition: background .2s;
+}
+.ai-button#goback {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
 }
 .gemini-info {
   position: absolute;
@@ -298,18 +305,8 @@ body * {
   left: 50%;
   transform: translateX(-50%);
 
-  display: flex;
-  align-items: center;
   justify-content: center;
   padding: .8rem 2.4rem;
-
-  background-color: var(--color-white);
-  border: 1px solid var(--color-black);
-  border-radius: 99rem;
-
-  color: var(--color-black);
-  font-weight: 500;
-  font-size: 1.6rem;
 }
 .gemini-info span {
   display: flex;
@@ -569,7 +566,9 @@ body * {
   .ai-button, .gemini-info {
     font-size: 1.4rem;
   }
-  .google-logo, .loading-icon {
+  .google-logo,
+  .loading-icon,
+  .goback-icon {
     width: 1.6rem;
     height: 1.6rem;
   }
@@ -625,7 +624,9 @@ body * {
     transform: translate(0, 0);
     max-width: 150%;
   }
-  .google-logo, .loading-icon {
+  .google-logo,
+  .loading-icon,
+  .goback-icon {
     width: 1.4rem;
     height: 1.4rem;
   }
@@ -689,8 +690,13 @@ body * {
   .ai-button {
     font-size: 1.2rem;
   }
-  .google-logo, .loading-icon {
-    width: 1.2rem;
-    height: 1.2rem;
+  .ai-button#goback {
+    font-size: 1rem;
+  }
+  .google-logo,
+  .loading-icon,
+  .goback-icon {
+    width: 1rem;
+    height: 1rem;
   }
 }
