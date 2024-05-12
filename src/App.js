@@ -50,6 +50,7 @@ function App() {
             document.querySelectorAll("input").forEach(input => {
               input.disabled = true
             })
+            document.querySelector("#form-div").style.opacity = 0.75;
             window.createTailwindColorsDivs(suggested_colors, window.tailwind_colors)
             setAreColorsSuggestedByAI(true)
             break;
@@ -66,6 +67,7 @@ function App() {
     document.querySelectorAll("input").forEach(input => {
       input.disabled = false
     })
+    document.querySelector("#form-div").style.opacity = 1;
     setAreColorsSuggestedByAI(false)
   }
 
@@ -90,7 +92,7 @@ function App() {
             id="goback"
           >
             <CornerDownLeft size={18} className="goback-icon" />
-            Go back to reenable color swapping
+            Go back to re-enable color changing
           </button>
           <div className="gemini-info">
             <span>

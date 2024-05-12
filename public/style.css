@@ -92,6 +92,9 @@ body * {
   border: 0;
   outline: 0;
 }
+#color-picker:disabled {
+  opacity: 25%;
+}
 
 /* General settings for text input containers */
 .input-color-container {
