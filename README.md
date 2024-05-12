@@ -52,6 +52,9 @@ Tailwind CSS é um framework CSS que visa a utilidade, para isso, ele fornece di
 
 Você pode acessar/usar a ferramenta clicando [aqui](https://find-the-closest-tailwind-colors-v2.vercel.app/).
 
+> **Nota**:
+> Para ampliar o alcance da ferramenta, o projeto foi escrito em inglês. Já a documentação, em português, para facilitar a análise dos avaliadores da Alura.
+
 ### Sobre a versão 2 e a inserção da Google Gemini AI no projeto
 Por mais que o principal problema citado tenha sido solucionado no lançamento da v1, ainda havia uma questão que me tirava o sono.
 
@@ -81,14 +84,34 @@ Você pode acessar/usar a ferramenta clicando [aqui](https://find-the-closest-ta
 <a id="executando"></a>
 ## 🔧 Executando localmente
 
-Após [clonar o repositório](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository) e acessar a pasta do projeto, instale as dependências e inicie o servidor de desenvolvimento com os seguintes comandos:
+#### 1. Clone o repositório
+```bash
+git clone https://github.com/GabrielCenteioFreitas/FindTheClosestTailwindColors-v2.git
+```
 
+#### 2. Entre na pasta do projeto
+```bash
+cd FindTheClosestTailwindColors-v2
+```
+
+#### 3. Instale as dependências
 ```bash
 npm install
+```
+
+#### 4. Crie o arquivo .env e adicione sua [API Key](https://support.gemini.com/hc/pt-br/articles/360031080191-Como-fa%C3%A7o-para-criar-uma-chave-de-API) dessa forma:
+```bash
+# .env
+
+REACT_APP_API_KEY="insira aqui sua API Key"
+```
+
+#### 5. Inicie o servidor de desenvolvimento
+```bash
 npm start
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000) para visualizar a aplicação.
+#### 6. Acesse [http://localhost:3000](http://localhost:3000) para visualizar a aplicação
 
 <a id="tecnologias"></a>
 ## 🚀 Tecnologias
