@@ -11,7 +11,7 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
 const generationConfig = {
-  temperature: 1,
+  temperature: 0.8,
   topK: 0,
   topP: 0.95,
   maxOutputTokens: 8192,
@@ -58,7 +58,7 @@ const chat = model.startChat({
     },
     {
       role: "user",
-      parts: [{ text: "Nas próximas mensagens enviarei apenas a cor e a quantidade de cores próximas que desejo."}],
+      parts: [{ text: "Nas próximas mensagens enviarei apenas a cor e a quantidade de cores próximas que desejo. Quero que responda de forma semelhante a sua resposta anterior, ou seja, em apenas uma linha, separando as cores por apenas um espaço, sem incluir quebras de linhas ou qualquer texto adicional."}],
     },
     {
       role: "model",
@@ -82,11 +82,11 @@ const chat = model.startChat({
     },
     {
       role: "user",
-      parts: [{ text: "#A27AFF 3 cores"}],
+      parts: [{ text: "#A27AFF 4 cores"}],
     },
     {
       role: "model",
-      parts: [{ text: "violet-400 purple-400 violet-500"}],
+      parts: [{ text: "violet-400 purple-400 purple-500 violet-500"}],
     },
     {
       role: "user",

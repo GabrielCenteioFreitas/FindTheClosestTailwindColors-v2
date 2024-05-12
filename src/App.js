@@ -34,24 +34,50 @@ function App() {
             break;
           default:
             setIsButtonLoading(false)
-    
-            suggested_colors = suggested_colors.replace("\n", "").trim().split(' ')
+
+            var filtered_suggested_colors =
+              suggested_colors
+              .replace("\n", "")
+              .replace("  ", " ")
+              .replace(/[!"#$%&'()*+,./:;<=>?@[\]^_`{|}~]/g, "")
+              .trim()
+              .split(' ')
 
             const doSuggestedColorsHaveAnyIncorrentColor = 
-              suggested_colors.some(cor => {
-                return !Object.keys(window.tailwind_colors).includes(cor)
+              filtered_suggested_colors.some(color => 
+                !Object.keys(window.tailwind_colors).includes(color)
+              )
+
+            if (doSuggestedColorsHaveAnyIncorrentColor) {
+              filtered_suggested_colors = []
+              Object.keys(window.tailwind_colors).forEach(color => {
+                if (suggested_colors.includes(color)) {
+                  filtered_suggested_colors.push(color)
+                }
               })
 
-            if (doSuggestedColorsHaveAnyIncorrentColor || !(3 <= suggested_colors.length <= 5)) {
+              const doSuggestedColorsHaveAny500Color =
+                filtered_suggested_colors.some(color => {
+                  return color.includes("-500")
+                })
+
+              if (doSuggestedColorsHaveAny500Color) {
+                filtered_suggested_colors = filtered_suggested_colors.filter(color => {
+                  return color.slice(color.length-3, color.length) !== "-50"
+                })
+              }
+            }
+              
+            if (filtered_suggested_colors.length < 3) {
               alert("An error occurred while querying Gemini. Please wait a few seconds and try again.")
               return
             }
-            
+
             document.querySelectorAll("input").forEach(input => {
               input.disabled = true
             })
             document.querySelector("#form-div").style.opacity = 0.75;
-            window.createTailwindColorsDivs(suggested_colors, window.tailwind_colors)
+            window.createTailwindColorsDivs(filtered_suggested_colors, window.tailwind_colors)
             setAreColorsSuggestedByAI(true)
             break;
         }
