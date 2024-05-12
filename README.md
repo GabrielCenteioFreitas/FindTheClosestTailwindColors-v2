@@ -26,8 +26,8 @@
 
 <p align="center">
   <a href="#projeto">Sobre o projeto</a> •
-  <a href="#tecnologias">Tecnologias</a> •
-  <a href="#executando">Executando localmente</a>
+  <a href="#executando">Executando localmente</a> •
+  <a href="#tecnologias">Tecnologias</a>
 </div>
 
 <br>
@@ -43,14 +43,17 @@
 
 <br>
 
-
-## 💻 Sobre o projeto<a id="projeto"></a>
+<a id="projeto"></a>
+## 💻 Sobre o projeto
 
 Tailwind CSS é um framework CSS que visa a utilidade, para isso, ele fornece diversas classes utilitárias. Acerca de cores, o Tailwind apresenta uma grande lista de opções, o que facilita a construção de um projeto. Entretanto, ao desenvolver uma aplicação, é comum que o desenvolvedor possua uma cor que deseja utilizar no projeto e que não está na paleta do Tailwind, logo, precisa encontrar uma cor que seja semelhante a desejada. (ainda que seja possível adicionar cores personalizadas, a utilização da própria paleta acaba sendo mais fácil e rápida).
 
 **Foi com esse propósito que o "Find the closest Tailwind CSS Colors" surgiu, tornando-se uma ferramenta que todo desenvolvedor Tailwind precisa**. Fácil e intuitivo, nesse site você pode inserir uma cor em código Hex/RGB ou selecioná-la de um seletor de cores e obter instantaneamente as cores mais próximas da paleta Tailwind. Além disso, é possível ver sugestões de cores próximas dadas pelo Gemini, IA do Google, que, em diversos casos, sugere cores melhores do que as encontradas pelos cálculos.
 
 Você pode acessar/usar a ferramenta clicando [aqui](https://find-the-closest-tailwind-colors-v2.vercel.app/).
+
+> **Nota**:
+> Para ampliar o alcance da ferramenta, o projeto foi escrito em inglês. Já a documentação, em português, para facilitar a análise dos avaliadores da Alura.
 
 ### Sobre a versão 2 e a inserção da Google Gemini AI no projeto
 Por mais que o principal problema citado tenha sido solucionado no lançamento da v1, ainda havia uma questão que me tirava o sono.
@@ -78,18 +81,40 @@ Foi, então, assistindo às aulas da [Imersão de Inteligência Artificial com o
 
 Você pode acessar/usar a ferramenta clicando [aqui](https://find-the-closest-tailwind-colors-v2.vercel.app/).
 
-## 🔧 Executando localmente<a id="executando"></a>
+<a id="executando"></a>
+## 🔧 Executando localmente
 
-Após [clonar o repositório](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository) e acessar a pasta do projeto, instale as dependências e inicie o servidor de desenvolvimento com os seguintes comandos:
+#### 1. Clone o repositório
+```bash
+git clone https://github.com/GabrielCenteioFreitas/FindTheClosestTailwindColors-v2.git
+```
 
+#### 2. Entre na pasta do projeto
+```bash
+cd FindTheClosestTailwindColors-v2
+```
+
+#### 3. Instale as dependências
 ```bash
 npm install
+```
+
+#### 4. Crie o arquivo .env e adicione sua [API Key](https://support.gemini.com/hc/pt-br/articles/360031080191-Como-fa%C3%A7o-para-criar-uma-chave-de-API) dessa forma:
+```bash
+# .env
+
+REACT_APP_API_KEY="insira aqui sua API Key"
+```
+
+#### 5. Inicie o servidor de desenvolvimento
+```bash
 npm start
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000) para visualizar a aplicação.
+#### 6. Acesse [http://localhost:3000](http://localhost:3000) para visualizar a aplicação
 
-## 🚀 Tecnologias<a id="tecnologias"></a>
+<a id="tecnologias"></a>
+## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
