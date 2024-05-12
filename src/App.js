@@ -16,17 +16,17 @@ function App() {
       sendMessage(
         `#${color}`,
         document.querySelector("#tailwind-colors").children.length - 1
-      ).then(cores_proximas => {
-        switch (cores_proximas) {
+      ).then(suggested_colors => {
+        switch (suggested_colors) {
           case "error-429":
-            alert("Você está realizando muitas requisições. Aguarde alguns segundos e tente novamente.")
+            alert("You are making too many requests. Please wait a few seconds and try again.")
             setIsButtonLoading(false)
 
             setShouldButtonBeDisabled(true)
             setTimeout(() => setShouldButtonBeDisabled(false), 5000)
             break;
           case "error":
-            alert("Ocorreu um erro ao consultar o Gemini. Aguarde alguns segundos e tente novamente.")
+            alert("An error occurred while querying Gemini. Please wait a few seconds and try again.")
             setIsButtonLoading(false)
             
             setShouldButtonBeDisabled(true)
@@ -35,34 +35,34 @@ function App() {
           default:
             setIsButtonLoading(false)
     
-            cores_proximas = cores_proximas.replace("\n", "").trim().split(' ')
+            suggested_colors = suggested_colors.replace("\n", "").trim().split(' ')
 
-            const coresProximasPossuiAlgumaCorErrada = 
-              cores_proximas.some(cor => {
-                return !Object.keys(window.cores_tailwind).includes(cor)
+            const doSuggestedColorsHaveAnyIncorrentColor = 
+              suggested_colors.some(cor => {
+                return !Object.keys(window.tailwind_colors).includes(cor)
               })
 
-            if (coresProximasPossuiAlgumaCorErrada || !(3 <= cores_proximas.length <= 5)) {
-              alert("Ocorreu um erro ao consultar o Gemini. Aguarde alguns segundos e tente novamente.")
+            if (doSuggestedColorsHaveAnyIncorrentColor || !(3 <= suggested_colors.length <= 5)) {
+              alert("An error occurred while querying Gemini. Please wait a few seconds and try again.")
               return
             }
             
             document.querySelectorAll("input").forEach(input => {
               input.disabled = true
             })
-            window.createTailwindColorsDivs(cores_proximas, window.cores_tailwind)
+            window.createTailwindColorsDivs(suggested_colors, window.tailwind_colors)
             setAreColorsSuggestedByAI(true)
             break;
         }
       })
     } catch (error) {
       setIsButtonLoading(false)
-      alert("Ocorreu um erro ao consultar o Gemini. Aguarde alguns segundos e tente novamente.")
+      alert("An error occurred while querying Gemini. Please wait a few seconds and try again.")
     }
   }
 
   const handleGoBackClick = () => {
-    window.acharCores()
+    window.findColors()
     document.querySelectorAll("input").forEach(input => {
       input.disabled = false
     })
@@ -76,7 +76,6 @@ function App() {
           onClick={handleGetColorsSuggestedByAIClick}
           className={`ai-button ${isButtonLoading && "loading"}`}
           disabled={isButtonLoading || shouldButtonBeDisabled}
-          id="gemini"
         >
           {(isButtonLoading || shouldButtonBeDisabled) && (
             <LoaderCircle size={18} className="loading-icon" />

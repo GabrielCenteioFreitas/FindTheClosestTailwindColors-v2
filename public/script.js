@@ -1,12 +1,12 @@
 // Loading JSON
-var cores_tailwind;
+var tailwind_colors;
 fetch('./assets/cores_tailwind.json')
   .then(response => response.json())
-  .then(cores_tailwind_json => {
-    cores_tailwind = cores_tailwind_json;
+  .then(data => {
+    tailwind_colors = data;
     
     // Calling the main function after loading JSON
-    acharCores();
+    findColors();
   })
 
 // Function that changes the RGB code to Hex
@@ -44,99 +44,99 @@ function hexToRGBfromHEXInput(hex_color) {
 }
 
 // Main function - responsible for find the closest Tailwind colors
-function acharCores() {
+function findColors() {
   var red = parseInt(document.querySelector('#red').value);
   var green = parseInt(document.querySelector('#green').value);
   var blue = parseInt(document.querySelector('#blue').value);
-  var coordenadas = [red, green, blue];
+  var coordinates = [red, green, blue];
   var range = 10;
-  var lista = [];
+  var colors_list = [];
 
-  function acharProximos() {
-    var minimo = [red-range, green-range, blue-range];
-    var maximo = [red+range, green+range, blue+range];
-    for (var key in cores_tailwind){
-      var value = cores_tailwind[key];
+  function findClosestColors() {
+    var minimum = [red-range, green-range, blue-range];
+    var maximum = [red+range, green+range, blue+range];
+    for (var key in tailwind_colors){
+      var value = tailwind_colors[key];
       var in_range = true;
       for (var i = 0; i < 3; i++) {
-        if (value[i] < minimo[i] || value[i] > maximo[i]) {
+        if (value[i] < minimum[i] || value[i] > maximum[i]) {
           in_range = false;
           break;
         }
       }
-      if (in_range && !lista.includes(key)) {
-        lista.push(key);
+      if (in_range && !colors_list.includes(key)) {
+        colors_list.push(key);
       }
     }
   }
 
-  while (lista.length < 3){
-    acharProximos(range);
+  while (colors_list.length < 3){
+    findClosestColors(range);
     range += 5;
   }
 
-  var distancias = []
-  for (cor of lista)  {
-    var distancia_atual = []
-    for (const [i] of Object.entries(cores_tailwind[cor])) {
-      distancia_atual.push(cores_tailwind[cor][i] - coordenadas[i]);
+  var distances_list = []
+  for (color of colors_list)  {
+    var current_distance = []
+    for (const [i] of Object.entries(tailwind_colors[color])) {
+      current_distance.push(tailwind_colors[color][i] - coordinates[i]);
     }
-    distancias.push(Math.hypot(...distancia_atual));
+    distances_list.push(Math.hypot(...current_distance));
   }
 
-  var lista_ordenada = []
-  while (distancias.length > 0){
-    var index_min_distancia = distancias.indexOf(Math.min(...distancias));
-    lista_ordenada.push(lista[index_min_distancia]);
+  var ordered_colors_list = []
+  while (distances_list.length > 0){
+    var min_distance_index = distances_list.indexOf(Math.min(...distances_list));
+    ordered_colors_list.push(colors_list[min_distance_index]);
     
-    lista.splice(index_min_distancia, 1);
-    distancias.splice(index_min_distancia, 1);
+    colors_list.splice(min_distance_index, 1);
+    distances_list.splice(min_distance_index, 1);
   }
 
-  document.querySelector('body').style.background = `rgb(${coordenadas[0]}, ${coordenadas[1]}, ${coordenadas[2]})`;  
+  document.querySelector('body').style.background = `rgb(${coordinates[0]}, ${coordinates[1]}, ${coordinates[2]})`;  
   
-  createTailwindColorsDivs(lista_ordenada, cores_tailwind)
+  createTailwindColorsDivs(ordered_colors_list, tailwind_colors)
 }
 
-function createTailwindColorsDivs(cores_proximas, cores_tailwind) {
+function createTailwindColorsDivs(closest_colors, tailwind_colors) {
   while (document.querySelector("#tailwind-colors").children.length > 1) {
     document.querySelector("#tailwind-colors").removeChild(document.querySelector("#tailwind-colors").lastChild);
   }
 
   var i = 1;
-  for (var cor of cores_proximas) {
+  for (var color of closest_colors) {
     if (i <= 5) {
-      if (cores_proximas.length <= 5) {
-        var altura = 100/cores_proximas.length;
+      if (closest_colors.length <= 5) {
+        var height = 100/closest_colors.length;
       } else {
-        var altura = 100/5;
+        var height = 100/5;
       }
 
       const container = document.querySelector('template').content.firstElementChild.cloneNode(true);
       container.id = `container-${i}`;
 
-      var nome_container_atual = container.querySelector(`.name`);
-      var rgb_container_atual = container.querySelector(`.rgb span`);
-      var hex_container_atual = container.querySelector(`.hex span`);
+      var current_container_name = container.querySelector(`.name`);
+      var current_container_rgb = container.querySelector(`.rgb span`);
+      var current_container_hex = container.querySelector(`.hex span`);
     
-      var lista_cor_atual = cores_tailwind[cor];
-      var cor_atual_rgb = `rgb(${lista_cor_atual[0]}, ${lista_cor_atual[1]}, ${lista_cor_atual[2]})`;
-      var red = lista_cor_atual[0].toString(16);
-      var green = lista_cor_atual[1].toString(16);
-      var blue = lista_cor_atual[2].toString(16);
+      var current_color_coordinates = tailwind_colors[color];
+      var current_color_rgb = `${current_color_coordinates[0]}, ${current_color_coordinates[1]}, ${current_color_coordinates[2]}`;
+      var red = current_color_coordinates[0].toString(16);
+      var green = current_color_coordinates[1].toString(16);
+      var blue = current_color_coordinates[2].toString(16);
       var red_hex = red.length == 1 ? "0" + red : red;
       var green_hex = green.length == 1 ? "0" + green : green;
       var blue_hex = blue.length == 1 ? "0" + blue : blue;
-      var cor_atual_hex = "#" + red_hex + green_hex + blue_hex;
+      var current_color_hex = "#" + red_hex + green_hex + blue_hex;
 
-      var nome_atual = cores_proximas[i-1];
+      var current_color_name = closest_colors[i-1];
     
-      nome_container_atual.textContent = nome_atual;
-      rgb_container_atual.textContent = `${lista_cor_atual[0]}, ${lista_cor_atual[1]}, ${lista_cor_atual[2]}`;
-      hex_container_atual.textContent = cor_atual_hex.toUpperCase();
-      container.style.height = altura + "vh";
-      container.style.height = altura + "%";
-      container.style.backgroundColor = cor_atual_rgb;
+      current_container_name.textContent = current_color_name;
+      current_container_rgb.textContent = current_color_rgb;
+      current_container_hex.textContent = current_color_hex.toUpperCase();
+      container.style.height = height + "vh";
+      container.style.height = height + "%";
+      container.style.backgroundColor = `rgb(${current_color_rgb})`;
 
       document.querySelector("#tailwind-colors").appendChild(container);
     }
@@ -148,24 +148,24 @@ function createTailwindColorsDivs(cores_proximas, cores_tailwind) {
 // Adding EventListener to the inputs
 document.querySelector("#color-picker").addEventListener("input", function() {  
   hexToRGBfromColorPicker();
-  acharCores();
+  findColors();
 });
 document.querySelector("#hex").addEventListener("input", function() {
   if (document.querySelector("#hex").value.length === 6) {
     hexToRGBfromHEXInput(document.querySelector("#hex").value);
-    acharCores();
+    findColors();
   }
   else if (document.querySelector("#hex").value.length === 3) {
     var hex_color = document.querySelector("#hex").value.replace(/([a-f\d])/gi, '$1$1');
     hexToRGBfromHEXInput(hex_color);
-    acharCores();
+    findColors();
   }
 });
 
 document.querySelectorAll("#rgb .inputs").forEach(function(input) {
   input.addEventListener("input", function() {
     rgbToHex();
-    acharCores();
+    findColors();
   });
 });
 
@@ -257,10 +257,10 @@ function expandColorInfo() {
 
 // Randomizing the start color
 function randomizeColor() {
-  var varters = '0123456789ABCDEF';
+  var hex_characters = '0123456789ABCDEF';
   var color = '';
   for (var i = 0; i < 6; i++) {
-    color += varters[Math.floor(Math.random() * 16)];
+    color += hex_characters[Math.floor(Math.random() * 16)];
   }
   document.querySelector("#hex").value = color;
   hexToRGBfromHEXInput(color);
