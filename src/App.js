@@ -19,7 +19,7 @@ function App() {
       ).then(suggested_colors => {
         switch (suggested_colors) {
           case "error-429":
-            alert("You are making too many requests. Please wait a few seconds and try again.")
+            alert("You are making too many requests. Please wait a few seconds, refresh the page and try again.")
             setIsButtonLoading(false)
 
             setShouldButtonBeDisabled(true)
