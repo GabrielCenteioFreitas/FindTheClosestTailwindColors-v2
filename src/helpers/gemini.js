@@ -1,21 +1,15 @@
 import {
-  GoogleGenerativeAI,
+  GoogleGenAI,
   HarmCategory,
   HarmBlockThreshold,
-} from "@google/generative-ai";
+} from "@google/genai";
 
-const MODEL_NAME = 'gemini-1.5-pro-latest';
+const MODEL_NAME = 'gemini-2.5-flash';
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const genAI = new GoogleGenerativeAI(API_KEY);
-const model = genAI.getGenerativeModel({ model: MODEL_NAME });
-
-const generationConfig = {
-  temperature: 0.8,
-  topK: 0,
-  topP: 0.95,
-  maxOutputTokens: 8192,
-};
+const genAI = new GoogleGenAI({
+  apiKey: API_KEY,
+});
 
 const safetySettings = [
   {
@@ -36,9 +30,18 @@ const safetySettings = [
   },
 ];
 
-const chat = model.startChat({
-  generationConfig,
-  safetySettings,
+const chat = genAI.chats.create({
+  model: MODEL_NAME,
+  config: {
+    temperature: 0.8,
+    topK: 0,
+    topP: 0.95,
+    maxOutputTokens: 8192,
+    safetySettings,
+    thinkingConfig: {
+      thinkingBudget: 0,
+    },
+  },
   history: [
     {
       role: "user",
@@ -101,9 +104,13 @@ const chat = model.startChat({
 
 export const sendMessage = async (msg, qntd) => {
   try {
-    const result = await chat.sendMessage(`${msg} ${qntd} cores`)
-    const response = result.response
-    return response.text()
+    const result = await chat.sendMessage({
+      message: `${msg} ${qntd} cores`
+    })
+
+    const response = result.text
+    
+    return response
   } catch(error) {
     if (error.status === 429) {
       return "error-429"
