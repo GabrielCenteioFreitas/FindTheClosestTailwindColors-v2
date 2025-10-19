@@ -9,13 +9,13 @@ function App() {
   const [shouldButtonBeDisabled, setShouldButtonBeDisabled] = useState(false);
 
   const handleGetColorsSuggestedByAIClick = () => {
-    const color = document.getElementById('hex').value
+    const color = (document.getElementById('hex') as HTMLInputElement)?.value
 
     setIsButtonLoading(true)
     try {
       sendMessage(
         `#${color}`,
-        document.querySelector("#tailwind-colors").children.length - 1
+        (document.querySelector("#tailwind-colors") as HTMLElement)?.children.length - 1
       ).then(suggested_colors => {
         switch (suggested_colors) {
           case "error-429":
@@ -45,12 +45,12 @@ function App() {
 
             const doSuggestedColorsHaveAnyIncorrentColor = 
               filtered_suggested_colors.some(color => 
-                !Object.keys(window.tailwind_colors).includes(color)
+                !Object.keys((window as any).tailwind_colors).includes(color)
               )
 
             if (doSuggestedColorsHaveAnyIncorrentColor) {
               filtered_suggested_colors = []
-              Object.keys(window.tailwind_colors).forEach(color => {
+              Object.keys((window as any).tailwind_colors).forEach(color => {
                 if (suggested_colors.includes(color)) {
                   filtered_suggested_colors.push(color)
                 }
@@ -74,10 +74,10 @@ function App() {
             }
 
             document.querySelectorAll("input").forEach(input => {
-              input.disabled = true
-            })
-            document.querySelector("#form-div").style.opacity = 0.75;
-            window.createTailwindColorsDivs(filtered_suggested_colors, window.tailwind_colors)
+              (input as HTMLInputElement).disabled = true
+            });
+            (document.querySelector("#form-div") as HTMLElement).style.opacity = "0.75";
+            (window as any).createTailwindColorsDivs(filtered_suggested_colors, (window as any).tailwind_colors)
             setAreColorsSuggestedByAI(true)
             break;
         }
@@ -89,11 +89,11 @@ function App() {
   }
 
   const handleGoBackClick = () => {
-    window.findColors()
+    (window as any).findColors();
     document.querySelectorAll("input").forEach(input => {
-      input.disabled = false
-    })
-    document.querySelector("#form-div").style.opacity = 1;
+      (input as HTMLInputElement).disabled = false
+    });
+    (document.querySelector("#form-div") as HTMLElement).style.opacity = "1";
     setAreColorsSuggestedByAI(false)
   }
 
